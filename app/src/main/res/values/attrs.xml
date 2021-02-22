@@ -3,5 +3,6 @@
         <attr name="fullscreenBackgroundColor" format="color" />
         <attr name="fullscreenForegroundColor" format="color" />
         <attr name="fullscreenDivider" format="reference" />
+        <attr name="fullscreenStatusBarDarkText" format="boolean" />
     </declare-styleable>
 </resources>

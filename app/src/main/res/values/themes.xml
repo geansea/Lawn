@@ -18,6 +18,7 @@
         <item name="fullscreenBackgroundColor">@color/white</item>
         <item name="fullscreenForegroundColor">@color/black</item>
         <item name="fullscreenDivider">@drawable/divider_light</item>
+        <item name="fullscreenStatusBarDarkText">true</item>
         <!-- Status bar color. -->
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>

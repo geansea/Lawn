@@ -1,6 +1,6 @@
 package com.geansea.lawn.activity
 
-import android.content.res.Configuration
+import android.content.res.Resources
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.gridlayout.widget.GridLayout
 import com.geansea.lawn.R
-import com.geansea.lawn.util.device.DeviceUtils
+import com.geansea.lawn.util.ui.SystemUiUtils
+import com.geansea.lawn.util.ui.ThemeUtils
 
 class HomeActivity : AppCompatActivity() {
+    private val TAG = this::class.java.simpleName
     private lateinit var container: ViewGroup
     private lateinit var cells: GridLayout
     private lateinit var bottomBar: ViewGroup
@@ -29,18 +31,22 @@ class HomeActivity : AppCompatActivity() {
         super.onPostCreate(savedInstanceState)
 
         enableFullscreen()
+        initCells()
     }
 
     private fun enableFullscreen() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-        val uiNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        val statusBarLightMode = uiNightMode != Configuration.UI_MODE_NIGHT_YES
-        Log.i("HomeActivity", "statusBarLightMode: $statusBarLightMode")
-        if (DeviceUtils.setStatusBarLightMode(window, statusBarLightMode)) {
-            Log.i("HomeActivity", "StatusBarLightMode success")
+        val statusBarDarkText = ThemeUtils.getAttribute(this,
+                R.attr.fullscreenStatusBarDarkText, false)
+        Log.i(TAG, "Use dark text on status bar: $statusBarDarkText")
+        if (SystemUiUtils.setStatusBarDarkText(window, statusBarDarkText)) {
+            Log.i(TAG, "SystemUiUtils.setStatusBarDarkText success")
         } else {
-            Log.w("HomeActivity", "StatusBarLightMode fallback")
+            Log.w(TAG, "SystemUiUtils.setStatusBarDarkText failed")
             container.setBackgroundColor(Color.BLACK)
         }
+    }
+
+    private fun initCells() {
     }
 }
