@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lawn">
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".page.home.HomeActivity"
             android:theme="@style/Theme.Lawn.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

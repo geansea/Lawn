@@ -1,6 +1,5 @@
-package com.geansea.lawn.activity
+package com.geansea.lawn.page.home
 
-import android.content.res.Resources
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log

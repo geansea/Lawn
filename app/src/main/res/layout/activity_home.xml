@@ -10,7 +10,7 @@
     android:orientation="vertical"
     app:divider="?attr/fullscreenDivider"
     app:showDividers="middle"
-    tools:context=".activity.HomeActivity">
+    tools:context=".page.home.HomeActivity">
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/cells"
